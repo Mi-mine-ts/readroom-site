@@ -25,6 +25,7 @@ body {
     color: #1F7349;
     padding: 0 0 0 40px;
     text-align: center;
+    min-height: 100vh;
 }
 
 #biblio {
@@ -33,9 +34,16 @@ body {
     border-radius: 250px;
     transition: 0.3s;
 }
+
 #biblio:hover{
     transform: scale(1.03);
     box-shadow: 0px 15px 35px rgba(0,0,0,0.35);
+}
+
+@media (max-width: 640px) {
+    #biblio {
+        width: 250px;
+    }
 }
 
 p {
@@ -97,6 +105,31 @@ tr:hover {
   text-decoration: none;
 }
 
+@media (max-width: 1024px) {
+    .navigation {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .navigation a {
+        padding: 15px 20px;
+    }
+}
+
+@media (max-width: 640px) {
+    .navigation {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+    }
+
+    .navigation a {
+        padding: 12px 8px;
+        margin: 5px;
+        font-size: 14px;
+        box-sizing: border-box;
+        min-width: 0;
+    }
+}
+
 .article {
     text-align: left;
     font-size: 16px;
@@ -139,14 +172,43 @@ tr:hover {
     font-size: 20px;
 }
 
-#carte-chronique {
+@media (max-width: 1024px) {
+    .carte-livre {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .carte-livre {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .carte-livre a {
+        width: auto;
+        min-width: 0;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+
+    .carte-livre img {
+        width: 100%;
+        height: auto;
+    }
+
+    .carte-livre img:hover {
+        width: 100%;
+    }
+}
+
+.carte-chronique {
     display: grid;
     align-items: stretch;
     grid-template-rows: 1fr;
     margin: 20px 0;
 }
 
-#carte-chronique img {
+.carte-chronique img {
     float: left;
     padding: 20px 20px 20px 50px;
     width: 200px;
@@ -154,12 +216,12 @@ tr:hover {
     transition: 0.3s;
 }
 
-#carte-chronique a:hover {
+.carte-chronique a:hover {
     transition: 0.5s;
     box-shadow: 0 0 20px black;
 }
 
-#carte-chronique a {
+.carte-chronique a {
     display: inline-block;
     width: auto;
     height: auto;
@@ -170,6 +232,31 @@ tr:hover {
     color: #006b46;
     font-size: 70px;
     text-align: left;
+}
+
+@media (max-width: 640px) {
+    .carte-chronique {
+        grid-template-column: minmax(0, 1fr);
+    }
+
+    .carte-chronique a {
+        display: block;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 28px;
+        overflow-wrap: break-word;
+    }
+
+    .carte-chronique img {
+        float: none;
+        display: block;
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        padding: 0;
+        margin: 0 auto 20px;
+    }
 }
 
 .journal {
@@ -269,6 +356,15 @@ tr:hover {
     border-radius: 50px;
     margin: 30px 0;
     padding: 10px 70px;
-    width: 350px;
+    width: 100%;
+    max-width: 490px;
+    box-sizing: border-box;
     box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.email {
+    color: #D32E5E;
+    text-decoration: none;
+    font-size: 25px;
+    filter: drop-shadow(10px 10px 10px #000)
 }
