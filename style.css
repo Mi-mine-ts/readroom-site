@@ -3,6 +3,7 @@ h1 {
     font-size: 60px;
     text-align: center;
     transition: 0.3s;
+    filter: drop-shadow(10px 10px 10px grey)
 }
 h1:hover{
     transform: scale(1.03);
@@ -236,7 +237,7 @@ tr:hover {
 
 @media (max-width: 640px) {
     .carte-chronique {
-        grid-template-column: minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .carte-chronique a {
@@ -366,5 +367,5 @@ tr:hover {
     color: #D32E5E;
     text-decoration: none;
     font-size: 25px;
-    filter: drop-shadow(10px 10px 10px #000)
+    filter: drop-shadow(10px 10px 1.5px grey)
 }
